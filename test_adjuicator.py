@@ -37,7 +37,7 @@ def test_bounce_equal_strength():
     result = adjudicate(m, state, orders)
 
     # Both bounce
-    assert result.unit_at("BUR") == a
+    assert result.unit_at("PAR") == a
     assert result.unit_at("BUR") == b
     print ("PASS: bounce")
 
@@ -88,7 +88,7 @@ def test_convoy_path():
     fleet2 = Unit("france", "fleet", "WES")
     state = base_state([army, fleet1, fleet2])
     orders = [
-        Move(army, "MAR", via_convoy=True),
+        Move(army, "MAR", is_convoy=True),
         Convoy(fleet1, army, "MAR"),
         Convoy(fleet2, army, "MAR"),
     ]

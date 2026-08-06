@@ -40,15 +40,15 @@ def _resolve_convoy_validity(game_map: Map, orders: list[Order]) -> list[Order]:
 # Breath first search 
 def _convoy_path_exists(game_map: Map, convoy_orders: list[Convoy], source: str, dest: str) -> bool:
     active = {
-        c_order.unit.provinve for c_order in convoy_orders
+        c_order.unit.province for c_order in convoy_orders
         if c_order.convoyed_dest.split("/")[0] == dest.split("/")[0]
     }
 
     if not active:
         return False
 
-    start = {p.splt("/")[0] for p in game_map.adjacent("fleet", origin)} & active
-    visted = set()
+    start = {p.split("/")[0] for p in game_map.adjacent("fleet", source)} & active
+    visited = set()
     frontier = deque(start)
     while frontier:
         base = frontier.popleft()
@@ -59,7 +59,7 @@ def _convoy_path_exists(game_map: Map, convoy_orders: list[Convoy], source: str,
         if dest.split("/")[0] in neighbors:
             return True
         for next in neighbors & active:
-            if next not in visted:
+            if next not in visited:
                 frontier.append(next)
     return False
 
@@ -89,7 +89,7 @@ def _strength(order: Order, all_orders: list[Order], cut: set[str]) -> int:
         # Support attack
         if isinstance(order, Move) and isinstance(o, SupportMove):
             if (o.supported_unit.location == order.unit.location and 
-                o.supported_destination.split("/")[0] == order.destination.split("/")[0]):
+                o.supported_dest.split("/")[0] == order.destination.split("/")[0]):
                 supports += 1
         # Support hold
         elif not isinstance(order, Move) and isinstance(o, SupportHold):
