@@ -38,6 +38,17 @@ class GameState:
     # Invalid retreats may be a whole thing and need more in the future.
     # TODO go through: https://petermc.net/diplomacy/datc_v3_2.html#4.A
 
+    
+    # Check that a unit is at a province
+    def unit_at(self, prov: str) -> Unit | None:
+        for unit in self.units:
+            if unit.province == prov:
+                return unit
+        return None
+
+    # Gets units targeted via power 
+    def unit_for(self, power: str) -> list[Unit]:
+        return [u for u in self.units if u.power == power]
 
     def clone(self) -> "GameState":
         return GameState(
