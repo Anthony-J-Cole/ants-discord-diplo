@@ -19,10 +19,11 @@ def adjudicate(game_map: Map, state: GameState, orders: list[Order]) -> GameStat
 
     orders = list(by_unit.values())
     valid_orders = _resolve_convoy_validity(game_map, orders)
-    cut_support = _resolve_cut_support(valid_orders)
+    cut_support = _compute_support_cuts(valid_orders)
     winners, dislodged = _resolve_movement(valid_orders, cut_support)
 
     # Apply to GameState
+    return _apply_results(state, orders, winners, dislodged)
 
 
 def _resolve_convoy_validity(game_map: Map, orders: list[Order]) -> list[Order]:
@@ -113,7 +114,7 @@ def _resolve_movement(orders:list[Order], cut: set[str]):
             attack_str = _strength(m, orders, cut)
 
             # Starts attack against prov already occupied
-            opposing = next(o for o in moves if o.unit.location == m.destination 
+            opposing = next((o for o in moves if o.unit.location == m.destination 
             and o.destination.split("/")[0] == m.unit.province), None, )
 
             if opposing:
@@ -125,7 +126,7 @@ def _resolve_movement(orders:list[Order], cut: set[str]):
                 defender = occupied_after.get(dest)
                 if defender is None:
                     rivals = [o for o in moves if o is not m and o.destination.split("/")[0] == dest]
-                    winning_rival = max((_strength(r, orders, cut) for r in rivals) default=0)
+                    winning_rival = max((_strength(r, orders, cut) for r in rivals), default=0)
                     result = attack_str > winning_rival
                 else:
                     defend_str = _strength(defender, orders, cut)
@@ -151,7 +152,7 @@ def _resolve_movement(orders:list[Order], cut: set[str]):
 def _current_occupant(orders: list[Order], status: dict[str, bool]):
     occ = {}
     for o in orders:
-        if isinstance(o, Move) and status.get(o.unit.location) is TrueL
+        if isinstance(o, Move) and status.get(o.unit.location) is True:
             continue
         occ[o.unit.province] = o
     return occ

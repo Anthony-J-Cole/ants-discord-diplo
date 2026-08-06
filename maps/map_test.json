@@ -1,0 +1,116 @@
+{
+  "provinces": {
+    "PAR": {
+      "kind": "land",
+      "supply_center": true,
+      "home_for": "france"
+    },
+    "BUR": {
+      "kind": "land",
+      "supply_center": false,
+      "home_for": null
+    },
+    "GAS": {
+      "kind": "coastal",
+      "supply_center": false,
+      "home_for": null
+    },
+    "MAR": {
+      "kind": "coastal",
+      "supply_center": true,
+      "home_for": "france"
+    },
+    "SPA": {
+      "kind": "coastal",
+      "supply_center": true,
+      "home_for": null,
+      "coasts": [
+        "nc",
+        "sc"
+      ]
+    },
+    "POR": {
+      "kind": "coastal",
+      "supply_center": true,
+      "home_for": null
+    },
+    "MAO": {
+      "kind": "sea",
+      "supply_center": false,
+      "home_for": null
+    },
+    "WES": {
+      "kind": "sea",
+      "supply_center": false,
+      "home_for": null
+    }
+  },
+  "adjacency": {
+    "army": {
+      "PAR": [
+        "BUR",
+        "GAS"
+      ],
+      "BUR": [
+        "PAR",
+        "MAR"
+      ],
+      "GAS": [
+        "PAR",
+        "SPA"
+      ],
+      "MAR": [
+        "BUR",
+        "SPA"
+      ],
+      "SPA": [
+        "MAR",
+        "GAS"
+      ],
+      "POR": []
+    },
+    "fleet": {
+      "GAS": [
+        "MAO",
+        "SPA/nc"
+      ],
+      "MAR": [
+        "WES",
+        "SPA/sc"
+      ],
+      "POR": [
+        "MAO",
+        "SPA/nc"
+      ],
+      "SPA/nc": [
+        "GAS",
+        "POR",
+        "MAO"
+      ],
+      "SPA/sc": [
+        "MAR",
+        "WES",
+        "MAO"
+      ],
+      "MAO": [
+        "GAS",
+        "POR",
+        "SPA/nc",
+        "WES"
+      ],
+      "WES": [
+        "MAR",
+        "SPA/sc",
+        "MAO"
+      ]
+    }
+  },
+  "powers": {
+    "france": {
+      "home_centers": [
+        "PAR",
+        "MAR"
+      ]
+    }
+  }
+}

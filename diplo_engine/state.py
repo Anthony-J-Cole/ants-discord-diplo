@@ -55,8 +55,8 @@ class GameState:
             map_name=self.map_name,
             phase=self.phase, 
             year=self.year,
-            units=list(self.units)
+            units=list(self.units),
             owned_centers=dict(self.owned_centers),
-            dislodged=dict(self.dislodged)
+            dislodged=dict(self.dislodged),
             invalid_retreats={i: set(j) for i, j in self.invalid_retreats.items()},
         )

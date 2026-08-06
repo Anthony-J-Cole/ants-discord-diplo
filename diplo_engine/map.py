@@ -31,7 +31,7 @@ class Map:
         self.army_adj = army_adj
         self.fleet_adj = fleet_adj
         self.powers = powers
-        self.validate()
+        self._validate()
 
     # load the map from a json
     # map.json
@@ -45,7 +45,7 @@ class Map:
     # }
     #
     @classmethod
-    def load_map(cls, path: str) -> "Map":
+    def load(cls, path: str) -> "Map":
         with open(path, "r", encoding="utf-8") as file:
             data = json.load(file)
         return cls.from_dict(data)
@@ -58,7 +58,7 @@ class Map:
                 id = prov_id,
                 kind = p["kind"],
                 supply_center=p.get("supply_centre", False), #default false
-                home_for=p.get("home_for") #TODO double check optional
+                home_for=p.get("home_for"), #TODO double check optional
                 coasts=tuple(p.get("coasts") or ()),
             )
         def _adj(section: dict) -> dict[str, set[str]]:
@@ -66,7 +66,7 @@ class Map:
 
         army_adj = _adj(data.get("adjacency", {}).get("army", {}))
         fleet_adj = _adj(data.get("adjacency", {}).get("fleet", {}))
-        powers = data.get("powers" {})
+        powers = data.get("powers", {})
         return cls(provinces, army_adj, fleet_adj, powers)
 
 

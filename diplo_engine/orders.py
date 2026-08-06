@@ -18,7 +18,7 @@ class Hold(Order):
 
 
 @dataclass(frozen=True)
-class Move(order):
+class Move(Order):
     destination: str
     # Currently putting here as rulebook states it is a move order
     is_convoy: bool = False
@@ -77,7 +77,5 @@ def validate_order(order: Order, game_map: Map, state: GameState) -> Order:
         if unit.kind != "fleet" or game_map.province(unit.location).kind != "sea":
             return Hold(unit)
         return order
+    #Hold case. 
     return order
-
-#Hold case. 
-return order
