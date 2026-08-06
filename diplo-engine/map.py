@@ -118,4 +118,14 @@ class Map:
     def supply_centers(self) -> list[str]:
         return [p.id for p in self.provinces.values() if p.supply_center]
 
-        
+    # Validate inputted data
+    def _validate(self):
+        for prov_id, prov in self.provinces.items():
+            if prov.kind not in ("land", "sea", "coastal"):
+                raise MapError(f"{prov_id}: invalid kind for {prov.kind}")
+            if prov.coasts and prov.kind != "coastal":
+                raise MapError(f"{prov_id}: has coasts on non-coastal prov")
+
+            # test fleet and army adj 
+            # double check duplicate ids? 
+            # 
