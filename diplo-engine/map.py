@@ -126,6 +126,12 @@ class Map:
             if prov.coasts and prov.kind != "coastal":
                 raise MapError(f"{prov_id}: has coasts on non-coastal prov")
 
-            # test fleet and army adj 
+            # test fleet and army adj
+            for table_id, table in (("army", self.army_adj), ("fleet", self.fleet_adj)):
+                for src, dest, in table.items():
+                    if src.split("/")[0] not in self.provinces:
+                        raise MapError(f"{table_id} not a table for {src}")
+                    for d in dest:
+                        if d.split("/")[0] not in self.provinces:
+                            raise MapError(f"{table_id} dest unknown {d}")
             # double check duplicate ids? 
-            # 
