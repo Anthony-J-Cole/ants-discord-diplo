@@ -113,5 +113,9 @@ class Map:
         if "/" not in dest:
             return any(n.split("/")[0] == dest for n in neig)
         return False
-    
-    
+
+    # Get a list of supply centers
+    def supply_centers(self) -> list[str]:
+        return [p.id for p in self.provinces.values() if p.supply_center]
+
+        
