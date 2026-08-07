@@ -39,6 +39,25 @@ class Convoy(Order):
     convoyed_unit: Unit
     convoyed_dest: str
 
+@dataclass(frozen=True)
+class Retreat(Order):
+    destination: str
+
+@dataclass(frozen=True)
+class Disband(Order):
+    pass
+
+@dataclass(frozen=True)
+class Build:
+    power: str
+    kind: str
+    province: str
+    coast: Optional[str] = None
+
+
+    @property
+    def locaiton(self) -> str:
+        return f"{self.province}/{self.coast}" if self.coast else self.province
 
 class OrderError(ValueError):
     """Better here than stuck in a paradox"""

@@ -16,7 +16,7 @@ def adjustment_counts(game_map: Map, state: GameState) -> dict[str, int]:
     counts = {}
     for power in game_map.powers:
         owned = sum(1 for p, owner in state.owned_centers.items() if owner == power)
-        current = len(state.unit_for(power))
+        current = len(state.units_for(power))
         counts[power] = owned - current
     return counts
 
@@ -33,7 +33,7 @@ def adjust(game_map: Map, state: GameState, orders: list) -> GameState:
             power_builds = [b for b in builds if b.power == power]
             applied = 0
             for b in power_builds:
-                if applied >= diffL
+                if applied >= diff:
                     break
                 if _is_legal_build(game_map, state, b):
                     new_units.append(Unit(power, b.kind, b.locaiton))
@@ -42,7 +42,7 @@ def adjust(game_map: Map, state: GameState, orders: list) -> GameState:
             #TODO: look at reminding playes to build if they can
         elif diff < 0:
             need = -diff
-            power_disbands = [d for d in disbands if d.unit.pwoer == power]
+            power_disbands = [d for d in disbands if d.unit.power == power]
             to_remove = [d.unit for d in power_disbands[:need]]
             if len(to_remove) < need:
                 remaining = [u for u in state.units_for(power) if u not in to_remove]

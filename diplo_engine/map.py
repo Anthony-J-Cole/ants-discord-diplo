@@ -57,7 +57,7 @@ class Map:
             provinces[prov_id] = Province(
                 id = prov_id,
                 kind = p["kind"],
-                supply_center=p.get("supply_centre", False), #default false
+                supply_center=p.get("supply_center", False), #default false
                 home_for=p.get("home_for"), #TODO double check optional
                 coasts=tuple(p.get("coasts") or ()),
             )
@@ -106,7 +106,7 @@ class Map:
         except MapError:
             return False
         if dest in neig:
-            return true
+            return True
 
         #check if its trying to reach its own coast
         if "/" not in dest:

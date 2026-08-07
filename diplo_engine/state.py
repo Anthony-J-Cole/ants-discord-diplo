@@ -30,7 +30,6 @@ class GameState:
     map_name: str
     phase: Phase
     year: int
-    season: str
     units: list[Unit] = field(default_factory=list) # not shared mut. 
     #TODO: rego through field
     owned_centers: dict[str, str] = field(default_factory=dict) # who owns what prov - power
@@ -48,7 +47,7 @@ class GameState:
         return None
 
     # Gets units targeted via power 
-    def unit_for(self, power: str) -> list[Unit]:
+    def units_for(self, power: str) -> list[Unit]:
         return [u for u in self.units if u.power == power]
 
     def clone(self) -> "GameState":
@@ -56,7 +55,6 @@ class GameState:
             map_name=self.map_name,
             phase=self.phase, 
             year=self.year,
-            season=self.season,
             units=list(self.units),
             owned_centers=dict(self.owned_centers),
             dislodged=dict(self.dislodged),

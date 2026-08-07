@@ -11,7 +11,7 @@ def retreat(game_map: Map, state: GameState, orders:list[Order]) -> GameState:
 
     # unit location - destination
     legal_moves: dict[str, str] = {}
-    for province, unit in state.dislodged.items:
+    for province, unit in state.dislodged.items():
         order = by_unit.get(unit.location, Disband(unit))
         if not isinstance(order, Retreat):
             continue

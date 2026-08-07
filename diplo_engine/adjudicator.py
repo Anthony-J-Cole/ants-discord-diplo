@@ -20,10 +20,10 @@ def adjudicate(game_map: Map, state: GameState, orders: list[Order]) -> GameStat
     orders = list(by_unit.values())
     valid_orders = _resolve_convoy_validity(game_map, orders)
     cut_support = _compute_support_cuts(valid_orders)
-    winners, dislodged = _resolve_movement(valid_orders, cut_support)
+    winners, dislodged, standoffs = _resolve_movement(valid_orders, cut_support)
 
     # Apply to GameState
-    return _apply_results(state, orders, winners, dislodged)
+    return _apply_results(state, orders, winners, dislodged, standoffs)
 
 
 def _resolve_convoy_validity(game_map: Map, orders: list[Order]) -> list[Order]:
@@ -140,14 +140,18 @@ def _resolve_movement(orders:list[Order], cut: set[str]):
 
     dislodged = {}
     winners = status
-    occupied_after = _current_occupant(orders, status)
     for m in moves:
         if status.get(m.unit.location):
             dest = m.destination.split("/")[0]
-            staying = _stationary_unit_at(orders, dest, status)
-            if staying is not None:
-                dislodged[dest] = staying
-    return winners, dislodged
+            stayer = _stationary_unit_at(orders, dest, status)
+            if stayer is not None:
+                dislodged[dest] = (stayer, m.unit.province)  # unit, attacker's origin
+ 
+    standoffs = {
+        m.destination.split("/")[0] for m in moves if status.get(m.unit.location) is False
+    }
+    return winners, dislodged, standoffs
+
 
 def _current_occupant(orders: list[Order], status: dict[str, bool]):
     occ = {}
@@ -167,14 +171,19 @@ def _stationary_unit_at(orders: list[Order], province: str, status: dict[str, bo
         return o.unit
     return None
 
-def _apply_results(state: GameState, orders: list[Order], winners: dict[str, bool], dislodged: dict[str, Unit]) -> GameState:
+def _apply_results(state: GameState, orders: list[Order], winners: dict[str, bool],
+                    dislodged: dict[str, tuple[Unit, str]], standoffs: set[str]) -> GameState:
     new_state = state.clone()
+    new_state.dislodged = {}
+    new_state.invalid_retreats = {}
     new_units = []
     for o in orders:
         if isinstance(o, Move) and winners.get(o.unit.location):
             new_units.append(replace(o.unit, location=o.destination))
-        elif o.unit.province in dislodged and dislodged[o.unit.province] == o.unit:
-            new_state.dislodged[o.unit.province] = o.unit
+        elif o.unit.province in dislodged and dislodged[o.unit.province][0] == o.unit:
+            unit, attacker_origin = dislodged[o.unit.province]
+            new_state.dislodged[o.unit.province] = unit
+            new_state.invalid_retreats[o.unit.province] = {attacker_origin} | standoffs
         else:
             new_units.append(o.unit)
     new_state.units = new_units
