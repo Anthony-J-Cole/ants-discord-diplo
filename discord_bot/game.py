@@ -19,6 +19,41 @@ class DiplomacyCog(commands.Cog):
         game_id = self.games.create_game(name, self.default_map_path, channel_id=str(interaction.channel_id))
         await interaction.response.send_message(f"Created **{name}** (id `{game_id}`)\nPlayers: `/diplomacy join game_id:{game_id} power:<power>`")
 
+    @group.command(name="join", description="Join a game in progress")
+    async def join(self, interaction: discord.Interaction, game_id: str, power:str):
+        try: 
+            self.games.join(game_id, power.lower, str(interaction.user.id))
+            await interaction.response.send_message(f"{interaction.user.mention} is now playing as {power}", ephemeral=False)
+        except GameManagerError as e:
+            await interaction.response.send_message(str(e), ephemeral=True)
 
+    @group.command(name="order", description="Submit an order")
+    async def order(self, interaction: discord.Interaction, game_id: str, order_text: str):
+        try:
+            msg = self.games.submit_order(game_id, str(interaction.user.id), order_text)
+            await interaction.response.send_message(msg, ephemeral=True)
+        except (GameManagerError, OrderParseError) as e:
+            await interaction.response.send_message(f"Cant submit that order: {e}", ephemeral=True)
 
+        @group.command(name="orders", description="Show your currently submitted orders")
+    async def orders(self, interaction: discord.Interaction, game_id: str):
+        try:
+            mine = self.games.my_orders(game_id, str(interaction.user.id))
+            text = "\n".join(mine) if mine else "No orders submitted yet."
+            await interaction.response.send_message(text, ephemeral=True)
+        except GameManagerError as e:
+            await interaction.response.send_message(str(e), ephemeral=True)
+ 
+    @group.command(name="process", description="Process the turn")
+    @app_commands.checks.has_permissions(manage_guild=True)
+    async def process(self, interaction: discord.Interaction, game_id: str):
+        new_state = self.games.process_phase(game_id)
+        await interaction.response.send_message(
+            f"Phase resolved. Now: **{new_state.year} {new_state.season} {new_state.phase.value}**"
+        )
+        # TODO: render map?
+    
+    async def setup(bot: commands.bot):
+        pass
+    
     
