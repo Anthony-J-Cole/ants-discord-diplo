@@ -14,6 +14,7 @@ class Province:
     supply_center: bool
     home_for: Optional[str]
     coasts: tuple[str, ...] = () #List of coasts
+    position: Optional[tuple[float,float]] = None # Map position x,y
 
     @property
     def multi_cost(self) -> bool:
@@ -54,12 +55,14 @@ class Map:
     def from_dict(cls, data:dict) -> "Map":
         provinces = {}
         for prov_id, p in data.get("provinces", {}).items():
+            pos = p.get("position")
             provinces[prov_id] = Province(
                 id = prov_id,
                 kind = p["kind"],
                 supply_center=p.get("supply_center", False), #default false
                 home_for=p.get("home_for"), #TODO double check optional
                 coasts=tuple(p.get("coasts") or ()),
+                position=tuple(pos) if pos else None
             )
         def _adj(section: dict) -> dict[str, set[str]]:
             return {n: set(adj) for n, adj in section.items()} #set for each section

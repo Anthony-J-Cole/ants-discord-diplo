@@ -4,6 +4,7 @@ from discord.ext import commands
 
 from ..game_manager import GameManager, GameManagerError
 from ..order_parser import OrderParseError
+from ..map_renderer import render_png
 
 class DiplomacyCog(commands.Cog):
     def __init__(self, bot: commands.Bot, game_manager: GameManager, default_map_path: str):
@@ -45,14 +46,33 @@ class DiplomacyCog(commands.Cog):
             await interaction.response.send_message(str(e), ephemeral=True)
  
     @group.command(name="process", description="Process the turn")
-    @app_commands.checks.has_permissions(manage_guild=True)
+     @app_commands.checks.has_permissions(manage_guild=True)
     async def process(self, interaction: discord.Interaction, game_id: str):
         new_state = self.games.process_phase(game_id)
-        await interaction.response.send_message(
-            f"Phase resolved. Now: **{new_state.year} {new_state.season} {new_state.phase.value}**"
-        )
-        # TODO: render map?
+        game_map = self.games.get_map(game_id)
+        content = f"Phase resolved. Now: **{new_state.year} {new_state.season} {new_state.phase.value}**"
+        try:
+            png_bytes = render_png(game_map, new_state)
+            file = discord.File(io.BytesIO(png_bytes), filename="map.png")
+            await interaction.response.send_message(content=content, file=file)
+        except ValueError:
+            await interaction.response.send_message(content)
     
+        @group.command(name="map", description="Show the current board")
+    async def map_(self, interaction: discord.Interaction, game_id: str):
+        state = self.games.get_state(game_id)
+        game_map = self.games.get_map(game_id)
+        try:
+            png_bytes = render_png(game_map, state)
+        except ValueError as e:
+            await interaction.response.send_message(str(e), ephemeral=True)
+            return
+        file = discord.File(io.BytesIO(png_bytes), filename="map.png")
+        await interaction.response.send_message(
+            content=f"**{state.year} {state.season} {state.phase.value}**", file=file
+        )
+
+
     async def setup(bot: commands.bot):
         pass
 

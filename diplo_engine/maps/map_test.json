@@ -3,22 +3,38 @@
     "PAR": {
       "kind": "land",
       "supply_center": true,
-      "home_for": "france"
+      "home_for": "france",
+      "position": [
+        120,
+        260
+      ]
     },
     "BUR": {
       "kind": "land",
       "supply_center": false,
-      "home_for": null
+      "home_for": null,
+      "position": [
+        230,
+        300
+      ]
     },
     "GAS": {
       "kind": "coastal",
       "supply_center": false,
-      "home_for": null
+      "home_for": null,
+      "position": [
+        100,
+        380
+      ]
     },
     "MAR": {
       "kind": "coastal",
       "supply_center": true,
-      "home_for": "france"
+      "home_for": "france",
+      "position": [
+        230,
+        420
+      ]
     },
     "SPA": {
       "kind": "coastal",
@@ -27,22 +43,38 @@
       "coasts": [
         "nc",
         "sc"
+      ],
+      "position": [
+        60,
+        500
       ]
     },
     "POR": {
       "kind": "coastal",
       "supply_center": true,
-      "home_for": null
+      "home_for": "italy",
+      "position": [
+        -40,
+        520
+      ]
     },
     "MAO": {
       "kind": "sea",
       "supply_center": false,
-      "home_for": null
+      "home_for": null,
+      "position": [
+        -30,
+        420
+      ]
     },
     "WES": {
       "kind": "sea",
       "supply_center": false,
-      "home_for": null
+      "home_for": null,
+      "position": [
+        160,
+        560
+      ]
     }
   },
   "adjacency": {
@@ -110,6 +142,11 @@
       "home_centers": [
         "PAR",
         "MAR"
+      ]
+    },
+    "italy": {
+      "home_centers": [
+        "POR"
       ]
     }
   }
