@@ -1,0 +1,1579 @@
+{
+  "adjacency": {
+    "army": {
+      "ALB": [
+        "GRE",
+        "SER",
+        "TRI"
+      ],
+      "ANK": [
+        "ARM",
+        "CON",
+        "SMY"
+      ],
+      "APU": [
+        "NAP",
+        "ROM",
+        "VEN"
+      ],
+      "ARM": [
+        "ANK",
+        "SEV",
+        "SMY",
+        "SYR"
+      ],
+      "BEL": [
+        "BUR",
+        "HOL",
+        "PIC",
+        "RUH"
+      ],
+      "BER": [
+        "KIE",
+        "MUN",
+        "PRU",
+        "SIL"
+      ],
+      "BOH": [
+        "GAL",
+        "MUN",
+        "SIL",
+        "TYR",
+        "VIE"
+      ],
+      "BRE": [
+        "GAS",
+        "PAR",
+        "PIC"
+      ],
+      "BUD": [
+        "GAL",
+        "RUM",
+        "SER",
+        "TRI",
+        "VIE"
+      ],
+      "BUL": [
+        "CON",
+        "GRE",
+        "RUM",
+        "SER"
+      ],
+      "BUR": [
+        "BEL",
+        "GAS",
+        "MAR",
+        "MUN",
+        "PAR",
+        "PIC",
+        "RUH"
+      ],
+      "CLY": [
+        "EDI",
+        "LVP"
+      ],
+      "CON": [
+        "ANK",
+        "BUL",
+        "SMY"
+      ],
+      "DEN": [
+        "KIE"
+      ],
+      "EDI": [
+        "CLY",
+        "LVP",
+        "YOR"
+      ],
+      "FIN": [
+        "STP",
+        "SWE"
+      ],
+      "GAL": [
+        "BOH",
+        "BUD",
+        "RUM",
+        "SIL",
+        "UKR",
+        "VIE",
+        "WAR"
+      ],
+      "GAS": [
+        "BRE",
+        "BUR",
+        "MAR",
+        "PAR",
+        "SPA"
+      ],
+      "GRE": [
+        "ALB",
+        "BUL",
+        "SER"
+      ],
+      "HOL": [
+        "BEL",
+        "KIE",
+        "RUH"
+      ],
+      "KIE": [
+        "BER",
+        "DEN",
+        "HOL",
+        "MUN",
+        "RUH"
+      ],
+      "LON": [
+        "WAL",
+        "YOR"
+      ],
+      "LVN": [
+        "MOS",
+        "STP",
+        "WAR"
+      ],
+      "LVP": [
+        "CLY",
+        "EDI",
+        "WAL",
+        "YOR"
+      ],
+      "MAR": [
+        "BUR",
+        "GAS",
+        "PIE",
+        "SPA"
+      ],
+      "MOS": [
+        "LVN",
+        "SEV",
+        "STP",
+        "UKR",
+        "WAR"
+      ],
+      "MUN": [
+        "BER",
+        "BOH",
+        "BUR",
+        "KIE",
+        "RUH",
+        "SIL",
+        "TYR"
+      ],
+      "NAF": [
+        "TUN"
+      ],
+      "NAP": [
+        "APU",
+        "ROM"
+      ],
+      "NWY": [
+        "STP",
+        "SWE"
+      ],
+      "PAR": [
+        "BRE",
+        "BUR",
+        "GAS",
+        "PIC"
+      ],
+      "PIC": [
+        "BEL",
+        "BRE",
+        "BUR",
+        "PAR"
+      ],
+      "PIE": [
+        "MAR",
+        "TUS",
+        "TYR",
+        "VEN"
+      ],
+      "POR": [
+        "SPA"
+      ],
+      "PRU": [
+        "BER",
+        "SIL",
+        "WAR"
+      ],
+      "ROM": [
+        "APU",
+        "NAP",
+        "TUS",
+        "VEN"
+      ],
+      "RUH": [
+        "BEL",
+        "BUR",
+        "HOL",
+        "KIE",
+        "MUN"
+      ],
+      "RUM": [
+        "BUD",
+        "BUL",
+        "GAL",
+        "SER",
+        "SEV",
+        "UKR"
+      ],
+      "SER": [
+        "ALB",
+        "BUD",
+        "BUL",
+        "GRE",
+        "RUM",
+        "TRI"
+      ],
+      "SEV": [
+        "ARM",
+        "MOS",
+        "RUM",
+        "UKR"
+      ],
+      "SIL": [
+        "BER",
+        "BOH",
+        "GAL",
+        "MUN",
+        "PRU",
+        "WAR"
+      ],
+      "SMY": [
+        "ANK",
+        "ARM",
+        "CON",
+        "SYR"
+      ],
+      "SPA": [
+        "GAS",
+        "MAR",
+        "POR"
+      ],
+      "STP": [
+        "FIN",
+        "LVN",
+        "MOS",
+        "NWY"
+      ],
+      "SWE": [
+        "FIN",
+        "NWY"
+      ],
+      "SYR": [
+        "ARM",
+        "SMY"
+      ],
+      "TRI": [
+        "ALB",
+        "BUD",
+        "SER",
+        "TYR",
+        "VEN",
+        "VIE"
+      ],
+      "TUN": [
+        "NAF"
+      ],
+      "TUS": [
+        "PIE",
+        "ROM",
+        "VEN"
+      ],
+      "TYR": [
+        "BOH",
+        "MUN",
+        "PIE",
+        "TRI",
+        "VEN",
+        "VIE"
+      ],
+      "UKR": [
+        "GAL",
+        "MOS",
+        "RUM",
+        "SEV",
+        "WAR"
+      ],
+      "VEN": [
+        "APU",
+        "PIE",
+        "ROM",
+        "TRI",
+        "TUS",
+        "TYR"
+      ],
+      "VIE": [
+        "BOH",
+        "BUD",
+        "GAL",
+        "TRI",
+        "TYR"
+      ],
+      "WAL": [
+        "LON",
+        "LVP",
+        "YOR"
+      ],
+      "WAR": [
+        "GAL",
+        "LVN",
+        "MOS",
+        "PRU",
+        "SIL",
+        "UKR"
+      ],
+      "YOR": [
+        "EDI",
+        "LON",
+        "LVP",
+        "WAL"
+      ]
+    },
+    "fleet": {
+      "ADR": [
+        "ALB",
+        "APU",
+        "ION",
+        "TRI",
+        "VEN"
+      ],
+      "AEG": [
+        "BUL/sc",
+        "CON",
+        "EAS",
+        "GRE",
+        "ION",
+        "SMY"
+      ],
+      "ALB": [
+        "ADR",
+        "GRE",
+        "ION",
+        "TRI"
+      ],
+      "ANK": [
+        "ARM",
+        "BLA",
+        "CON"
+      ],
+      "APU": [
+        "ADR",
+        "ION",
+        "NAP",
+        "VEN"
+      ],
+      "ARM": [
+        "ANK",
+        "BLA",
+        "SEV"
+      ],
+      "BAL": [
+        "BER",
+        "BOT",
+        "DEN",
+        "KIE",
+        "LVN",
+        "PRU",
+        "SWE"
+      ],
+      "BAR": [
+        "NWG",
+        "NWY",
+        "STP/nc"
+      ],
+      "BEL": [
+        "ENG",
+        "HOL",
+        "PIC"
+      ],
+      "BER": [
+        "BAL",
+        "KIE",
+        "PRU"
+      ],
+      "BLA": [
+        "ANK",
+        "ARM",
+        "BUL/ec",
+        "CON",
+        "RUM",
+        "SEV"
+      ],
+      "BOT": [
+        "BAL",
+        "FIN",
+        "LVN",
+        "STP/sc",
+        "SWE"
+      ],
+      "BRE": [
+        "ENG",
+        "GAS",
+        "MAO",
+        "PIC"
+      ],
+      "BUL/ec": [
+        "BLA",
+        "CON",
+        "RUM"
+      ],
+      "BUL/sc": [
+        "AEG",
+        "CON",
+        "GRE"
+      ],
+      "CLY": [
+        "EDI",
+        "LVP",
+        "NAO",
+        "NWG"
+      ],
+      "CON": [
+        "AEG",
+        "ANK",
+        "BLA",
+        "BUL/ec",
+        "BUL/sc",
+        "SMY"
+      ],
+      "DEN": [
+        "BAL",
+        "HEL",
+        "KIE",
+        "NTH",
+        "SKA",
+        "SWE"
+      ],
+      "EAS": [
+        "AEG",
+        "ION",
+        "SMY",
+        "SYR"
+      ],
+      "EDI": [
+        "CLY",
+        "NTH",
+        "NWG",
+        "YOR"
+      ],
+      "ENG": [
+        "BEL",
+        "BRE",
+        "IRI",
+        "LON",
+        "MAO",
+        "NTH",
+        "PIC",
+        "WAL"
+      ],
+      "FIN": [
+        "BOT",
+        "STP/sc",
+        "SWE"
+      ],
+      "GAS": [
+        "BRE",
+        "MAO",
+        "SPA/nc"
+      ],
+      "GRE": [
+        "AEG",
+        "ALB",
+        "BUL/sc",
+        "ION"
+      ],
+      "HEL": [
+        "DEN",
+        "HOL",
+        "KIE",
+        "NTH"
+      ],
+      "HOL": [
+        "BEL",
+        "HEL",
+        "KIE",
+        "NTH"
+      ],
+      "ION": [
+        "ADR",
+        "AEG",
+        "ALB",
+        "APU",
+        "EAS",
+        "GRE",
+        "NAP",
+        "TUN",
+        "TYS"
+      ],
+      "IRI": [
+        "ENG",
+        "LVP",
+        "MAO",
+        "NAO",
+        "WAL"
+      ],
+      "KIE": [
+        "BAL",
+        "BER",
+        "DEN",
+        "HEL",
+        "HOL"
+      ],
+      "LON": [
+        "ENG",
+        "NTH",
+        "WAL",
+        "YOR"
+      ],
+      "LVN": [
+        "BAL",
+        "BOT",
+        "STP/sc"
+      ],
+      "LVP": [
+        "CLY",
+        "IRI",
+        "NAO",
+        "WAL"
+      ],
+      "LYO": [
+        "MAR",
+        "PIE",
+        "SPA/sc",
+        "TUS",
+        "TYS",
+        "WES"
+      ],
+      "MAO": [
+        "BRE",
+        "ENG",
+        "GAS",
+        "IRI",
+        "NAF",
+        "NAO",
+        "POR",
+        "SPA/nc",
+        "WES"
+      ],
+      "MAR": [
+        "LYO",
+        "PIE",
+        "SPA/sc"
+      ],
+      "NAF": [
+        "MAO",
+        "TUN",
+        "WES"
+      ],
+      "NAO": [
+        "CLY",
+        "IRI",
+        "LVP",
+        "MAO",
+        "NWG"
+      ],
+      "NAP": [
+        "APU",
+        "ION",
+        "ROM",
+        "TYS"
+      ],
+      "NTH": [
+        "DEN",
+        "EDI",
+        "ENG",
+        "HEL",
+        "HOL",
+        "LON",
+        "NWG",
+        "NWY",
+        "SKA",
+        "YOR"
+      ],
+      "NWG": [
+        "BAR",
+        "CLY",
+        "EDI",
+        "NAO",
+        "NTH"
+      ],
+      "NWY": [
+        "BAR",
+        "NTH",
+        "SKA",
+        "STP/nc",
+        "SWE"
+      ],
+      "PIC": [
+        "BEL",
+        "BRE",
+        "ENG"
+      ],
+      "PIE": [
+        "LYO",
+        "MAR",
+        "TUS"
+      ],
+      "POR": [
+        "MAO",
+        "SPA/nc"
+      ],
+      "PRU": [
+        "BAL",
+        "BER"
+      ],
+      "ROM": [
+        "NAP",
+        "TUS",
+        "TYS"
+      ],
+      "RUM": [
+        "BLA",
+        "BUL/ec",
+        "SEV"
+      ],
+      "SEV": [
+        "ARM",
+        "BLA",
+        "RUM"
+      ],
+      "SKA": [
+        "DEN",
+        "NTH",
+        "NWY",
+        "SWE"
+      ],
+      "SMY": [
+        "AEG",
+        "CON",
+        "EAS",
+        "SYR"
+      ],
+      "SPA/nc": [
+        "GAS",
+        "MAO",
+        "POR"
+      ],
+      "SPA/sc": [
+        "LYO",
+        "MAR",
+        "WES"
+      ],
+      "STP/nc": [
+        "BAR",
+        "NWY"
+      ],
+      "STP/sc": [
+        "BOT",
+        "FIN",
+        "LVN"
+      ],
+      "SWE": [
+        "BAL",
+        "BOT",
+        "DEN",
+        "FIN",
+        "NWY",
+        "SKA"
+      ],
+      "SYR": [
+        "EAS",
+        "SMY"
+      ],
+      "TRI": [
+        "ADR",
+        "ALB",
+        "VEN"
+      ],
+      "TUN": [
+        "ION",
+        "NAF",
+        "TYS",
+        "WES"
+      ],
+      "TUS": [
+        "LYO",
+        "PIE",
+        "ROM",
+        "TYS"
+      ],
+      "TYS": [
+        "ION",
+        "LYO",
+        "NAP",
+        "ROM",
+        "TUN",
+        "TUS",
+        "WES"
+      ],
+      "VEN": [
+        "ADR",
+        "APU",
+        "TRI"
+      ],
+      "WAL": [
+        "ENG",
+        "IRI",
+        "LON",
+        "LVP"
+      ],
+      "WES": [
+        "LYO",
+        "MAO",
+        "NAF",
+        "SPA/sc",
+        "TUN",
+        "TYS"
+      ],
+      "YOR": [
+        "EDI",
+        "LON",
+        "NTH"
+      ]
+    }
+  },
+  "powers": {
+    "austria": {
+      "home_centers": [
+        "VIE",
+        "TRI",
+        "BUD"
+      ],
+      "starting_units": [
+        [
+          "army",
+          "VIE"
+        ],
+        [
+          "fleet",
+          "TRI"
+        ],
+        [
+          "army",
+          "BUD"
+        ]
+      ]
+    },
+    "england": {
+      "home_centers": [
+        "EDI",
+        "LVP",
+        "LON"
+      ],
+      "starting_units": [
+        [
+          "fleet",
+          "EDI"
+        ],
+        [
+          "fleet",
+          "LON"
+        ],
+        [
+          "army",
+          "LVP"
+        ]
+      ]
+    },
+    "france": {
+      "home_centers": [
+        "BRE",
+        "PAR",
+        "MAR"
+      ],
+      "starting_units": [
+        [
+          "fleet",
+          "BRE"
+        ],
+        [
+          "army",
+          "PAR"
+        ],
+        [
+          "army",
+          "MAR"
+        ]
+      ]
+    },
+    "germany": {
+      "home_centers": [
+        "KIE",
+        "BER",
+        "MUN"
+      ],
+      "starting_units": [
+        [
+          "fleet",
+          "KIE"
+        ],
+        [
+          "army",
+          "BER"
+        ],
+        [
+          "army",
+          "MUN"
+        ]
+      ]
+    },
+    "italy": {
+      "home_centers": [
+        "VEN",
+        "ROM",
+        "NAP"
+      ],
+      "starting_units": [
+        [
+          "army",
+          "VEN"
+        ],
+        [
+          "army",
+          "ROM"
+        ],
+        [
+          "fleet",
+          "NAP"
+        ]
+      ]
+    },
+    "russia": {
+      "home_centers": [
+        "STP",
+        "MOS",
+        "WAR",
+        "SEV"
+      ],
+      "starting_units": [
+        [
+          "army",
+          "MOS"
+        ],
+        [
+          "army",
+          "WAR"
+        ],
+        [
+          "fleet",
+          "STP/sc"
+        ],
+        [
+          "fleet",
+          "SEV"
+        ]
+      ]
+    },
+    "turkey": {
+      "home_centers": [
+        "ANK",
+        "CON",
+        "SMY"
+      ],
+      "starting_units": [
+        [
+          "army",
+          "CON"
+        ],
+        [
+          "army",
+          "SMY"
+        ],
+        [
+          "fleet",
+          "ANK"
+        ]
+      ]
+    }
+  },
+  "provinces": {
+    "ADR": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        310,
+        410
+      ],
+      "supply_center": false
+    },
+    "AEG": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        415,
+        460
+      ],
+      "supply_center": false
+    },
+    "ALB": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        320,
+        425
+      ],
+      "supply_center": false
+    },
+    "ANK": {
+      "home_for": "turkey",
+      "kind": "coastal",
+      "position": [
+        470,
+        420
+      ],
+      "supply_center": true
+    },
+    "APU": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        295,
+        435
+      ],
+      "supply_center": false
+    },
+    "ARM": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        510,
+        400
+      ],
+      "supply_center": false
+    },
+    "BAL": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        275,
+        165
+      ],
+      "supply_center": false
+    },
+    "BAR": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        300,
+        -30
+      ],
+      "supply_center": false
+    },
+    "BEL": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        150,
+        230
+      ],
+      "supply_center": true
+    },
+    "BER": {
+      "home_for": "germany",
+      "kind": "coastal",
+      "position": [
+        285,
+        200
+      ],
+      "supply_center": true
+    },
+    "BLA": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        450,
+        375
+      ],
+      "supply_center": false
+    },
+    "BOH": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        270,
+        300
+      ],
+      "supply_center": false
+    },
+    "BOT": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        335,
+        110
+      ],
+      "supply_center": false
+    },
+    "BRE": {
+      "home_for": "france",
+      "kind": "coastal",
+      "position": [
+        70,
+        260
+      ],
+      "supply_center": true
+    },
+    "BUD": {
+      "home_for": "austria",
+      "kind": "land",
+      "position": [
+        345,
+        345
+      ],
+      "supply_center": true
+    },
+    "BUL": {
+      "coasts": [
+        "ec",
+        "sc"
+      ],
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        400,
+        415
+      ],
+      "supply_center": true
+    },
+    "BUR": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        170,
+        300
+      ],
+      "supply_center": false
+    },
+    "CLY": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        40,
+        90
+      ],
+      "supply_center": false
+    },
+    "CON": {
+      "home_for": "turkey",
+      "kind": "coastal",
+      "position": [
+        415,
+        425
+      ],
+      "supply_center": true
+    },
+    "DEN": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        225,
+        150
+      ],
+      "supply_center": true
+    },
+    "EAS": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        450,
+        490
+      ],
+      "supply_center": false
+    },
+    "EDI": {
+      "home_for": "england",
+      "kind": "coastal",
+      "position": [
+        95,
+        85
+      ],
+      "supply_center": true
+    },
+    "ENG": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        140,
+        235
+      ],
+      "supply_center": false
+    },
+    "FIN": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        345,
+        55
+      ],
+      "supply_center": false
+    },
+    "GAL": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        325,
+        305
+      ],
+      "supply_center": false
+    },
+    "GAS": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        80,
+        330
+      ],
+      "supply_center": false
+    },
+    "GRE": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        365,
+        450
+      ],
+      "supply_center": true
+    },
+    "HEL": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        190,
+        150
+      ],
+      "supply_center": false
+    },
+    "HOL": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        190,
+        190
+      ],
+      "supply_center": true
+    },
+    "ION": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        285,
+        480
+      ],
+      "supply_center": false
+    },
+    "IRI": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        5,
+        195
+      ],
+      "supply_center": false
+    },
+    "KIE": {
+      "home_for": "germany",
+      "kind": "coastal",
+      "position": [
+        235,
+        190
+      ],
+      "supply_center": true
+    },
+    "LON": {
+      "home_for": "england",
+      "kind": "coastal",
+      "position": [
+        125,
+        195
+      ],
+      "supply_center": true
+    },
+    "LVN": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        385,
+        145
+      ],
+      "supply_center": false
+    },
+    "LVP": {
+      "home_for": "england",
+      "kind": "coastal",
+      "position": [
+        60,
+        145
+      ],
+      "supply_center": true
+    },
+    "LYO": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        170,
+        400
+      ],
+      "supply_center": false
+    },
+    "MAO": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        0,
+        300
+      ],
+      "supply_center": false
+    },
+    "MAR": {
+      "home_for": "france",
+      "kind": "coastal",
+      "position": [
+        150,
+        350
+      ],
+      "supply_center": true
+    },
+    "MOS": {
+      "home_for": "russia",
+      "kind": "land",
+      "position": [
+        450,
+        220
+      ],
+      "supply_center": true
+    },
+    "MUN": {
+      "home_for": "germany",
+      "kind": "land",
+      "position": [
+        230,
+        270
+      ],
+      "supply_center": true
+    },
+    "NAF": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        30,
+        470
+      ],
+      "supply_center": false
+    },
+    "NAO": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        -60,
+        60
+      ],
+      "supply_center": false
+    },
+    "NAP": {
+      "home_for": "italy",
+      "kind": "coastal",
+      "position": [
+        250,
+        465
+      ],
+      "supply_center": true
+    },
+    "NTH": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        175,
+        105
+      ],
+      "supply_center": false
+    },
+    "NWG": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        60,
+        20
+      ],
+      "supply_center": false
+    },
+    "NWY": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        225,
+        35
+      ],
+      "supply_center": true
+    },
+    "PAR": {
+      "home_for": "france",
+      "kind": "land",
+      "position": [
+        110,
+        300
+      ],
+      "supply_center": true
+    },
+    "PIC": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        140,
+        260
+      ],
+      "supply_center": false
+    },
+    "PIE": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        185,
+        350
+      ],
+      "supply_center": false
+    },
+    "POR": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        -30,
+        380
+      ],
+      "supply_center": true
+    },
+    "PRU": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        335,
+        190
+      ],
+      "supply_center": false
+    },
+    "ROM": {
+      "home_for": "italy",
+      "kind": "coastal",
+      "position": [
+        225,
+        435
+      ],
+      "supply_center": true
+    },
+    "RUH": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        200,
+        230
+      ],
+      "supply_center": false
+    },
+    "RUM": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        400,
+        335
+      ],
+      "supply_center": true
+    },
+    "SER": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        350,
+        390
+      ],
+      "supply_center": true
+    },
+    "SEV": {
+      "home_for": "russia",
+      "kind": "coastal",
+      "position": [
+        455,
+        320
+      ],
+      "supply_center": true
+    },
+    "SIL": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        300,
+        230
+      ],
+      "supply_center": false
+    },
+    "SKA": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        225,
+        100
+      ],
+      "supply_center": false
+    },
+    "SMY": {
+      "home_for": "turkey",
+      "kind": "coastal",
+      "position": [
+        440,
+        465
+      ],
+      "supply_center": true
+    },
+    "SPA": {
+      "coasts": [
+        "nc",
+        "sc"
+      ],
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        30,
+        380
+      ],
+      "supply_center": true
+    },
+    "STP": {
+      "coasts": [
+        "nc",
+        "sc"
+      ],
+      "home_for": "russia",
+      "kind": "coastal",
+      "position": [
+        425,
+        30
+      ],
+      "supply_center": true
+    },
+    "SWE": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        285,
+        70
+      ],
+      "supply_center": true
+    },
+    "SYR": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        490,
+        490
+      ],
+      "supply_center": false
+    },
+    "TRI": {
+      "home_for": "austria",
+      "kind": "coastal",
+      "position": [
+        295,
+        385
+      ],
+      "supply_center": true
+    },
+    "TUN": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        150,
+        480
+      ],
+      "supply_center": true
+    },
+    "TUS": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        195,
+        400
+      ],
+      "supply_center": false
+    },
+    "TYR": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        245,
+        340
+      ],
+      "supply_center": false
+    },
+    "TYS": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        195,
+        475
+      ],
+      "supply_center": false
+    },
+    "UKR": {
+      "home_for": null,
+      "kind": "land",
+      "position": [
+        395,
+        290
+      ],
+      "supply_center": false
+    },
+    "VEN": {
+      "home_for": "italy",
+      "kind": "coastal",
+      "position": [
+        250,
+        375
+      ],
+      "supply_center": true
+    },
+    "VIE": {
+      "home_for": "austria",
+      "kind": "land",
+      "position": [
+        300,
+        335
+      ],
+      "supply_center": true
+    },
+    "WAL": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        60,
+        195
+      ],
+      "supply_center": false
+    },
+    "WAR": {
+      "home_for": "russia",
+      "kind": "land",
+      "position": [
+        335,
+        260
+      ],
+      "supply_center": true
+    },
+    "WES": {
+      "home_for": null,
+      "kind": "sea",
+      "position": [
+        110,
+        450
+      ],
+      "supply_center": false
+    },
+    "YOR": {
+      "home_for": null,
+      "kind": "coastal",
+      "position": [
+        125,
+        140
+      ],
+      "supply_center": false
+    }
+  }
+}

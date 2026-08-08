@@ -4,7 +4,7 @@ import json
 import sqlite3
 from contextlib import closing
 
-from diplo_engine import GameState
+from diplo_engine.state import GameState
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS games (
@@ -42,14 +42,14 @@ CREATE TABLE IF NOT EXISTS phase_history (
 
 class Storage:
     def __init__(self, path: str = ":memory:"):
-        self.conn = sqlite3.connect(path, chcek_same_thread=False)
+        self.conn = sqlite3.connect(path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         with closing(self.conn.cursor()) as cur:
             cur.executescript(SCHEMA)
         self.conn.commit()
 
     def create_game(self, game_id: str, name: str, map_path: str, state: GameState, channel_id: str | None = None) -> None:
-        self.conn.execute("INSERT INTO games (id, name, map_path, state_json, channel_id) VALUES (?,?,?,?,?)", (game_id, name, map_path, json.dump(state.to_dict()), channel_id),
+        self.conn.execute("INSERT INTO games (id, name, map_path, state_json, channel_id) VALUES (?,?,?,?,?)", (game_id, name, map_path, json.dumps(state.to_dict()), channel_id),
                           )
         self.conn.commit()
 
@@ -72,8 +72,8 @@ class Storage:
         return row["map_path"]
 
     def add_player(self, game_id: str, power: str, discord_user_id: str) -> None:
-    self.conn.execute("INSERT OR REPLACE INTO players (game_id, power, discord_user_id) VALUES (?,?,?)",(game_id, power, discord_user_id), )
-    self.conn.commit()
+        self.conn.execute("INSERT OR REPLACE INTO players (game_id, power, discord_user_id) VALUES (?,?,?)",(game_id, power, discord_user_id), )
+        self.conn.commit()
 
     # Should allow for multiple players to control one power... TODO: test
     def get_power_for_user(self, game_id: str, discord_user_id: str) -> str | None:

@@ -1,6 +1,9 @@
 import uuid
 
-from diplo_engine import (Map, GameState, Unit, Phase, Build, process_phase as engine_process_phase, phase_key)
+from diplo_engine.map import Map
+from diplo_engine.state import GameState, Unit, Phase
+from diplo_engine.orders import Build 
+from diplo_engine.turn import process_phase as engine_process_phase, phase_key
 
 from .db import Storage
 from .order_parser import parse_order
@@ -13,28 +16,40 @@ class GameManager:
         self.storage = storage
         self._map_cache: dict[str, Map] = {}
 
+    def get_map(self, game_id: str) -> Map:
+        return self._get_map(self.storage.get_map_path(game_id))
+
     def _get_map(self, map_path: str) -> Map:
         if map_path not in self._map_cache:
             self._map_cache[map_path] = Map.load(map_path)
         return self._map_cache[map_path]
+
+    
     def create_game(self, name: str, map_path: str, channel_id: str | None = None, starting_year: int = 1901) -> str:
         game_map = self._get_map(map_path)
         units, owned = [], {}
         for power, info in game_map.powers.items():
-            for home in info.get("home_centers", []):
-                units.append(Unit(power, "army", home))
-                owned[home] = power
+            starting = info.get("starting_units")
+            if starting:
+                for kind, location in starting:
+                    units.append(Unit(power, kind, location))
+                for home in info.get("home_centers", []):
+                    owned[home] = power
+            else:
+                for home in info.get("home_centers", []):
+                    units.append(Unit(power, "army", home))
+                    owned[home] = power
 
-        state = GameState(map_name=map_path, phase=Phase.MOVEMENT, year=starting_year, season="spring", units=units, owned_ceters=owned,)
-        game_id = uuid.uuid4.hex[:8]
+        state = GameState(map_name=map_path, phase=Phase.MOVEMENT, year=starting_year, season="spring", units=units, owned_centers=owned,)
+        game_id = uuid.uuid4().hex[:8]
         self.storage.create_game(game_id, name, map_path, state, channel_id)
         return game_id
 
     def join(self, game_id: str, power:str, discord_user_id: str) -> None:
         state = self.storage.load_state(game_id)
         game_map = self._get_map(self.storage.get_map_path(game_id))
-        if power not in game_map.powers:
-            raise GameManagerError(f"{power} not a power in the game")
+        if power not in game_map.powers.keys():
+            raise GameManagerError(f"{power} not a power in the game {game_map.powers}")
         self.storage.add_player(game_id, power, discord_user_id)
 
     # returns a confirmation message

@@ -19,7 +19,9 @@
 
 import re
 
-from diplo_engine import (Map, GameState, Unit, Phase, Hold, Move, SupportHold, SupportMove, Convoy, Retreat, Disband, Build, )
+from diplo_engine.map import Map
+from diplo_engine.state import GameState, Unit, Phase
+from diplo_engine.orders import Hold, Move, SupportHold, SupportMove, Convoy, Retreat, Disband, Build
 
 class OrderParseError(ValueError):
     pass

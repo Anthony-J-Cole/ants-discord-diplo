@@ -34,7 +34,7 @@ async def _setup():
     game_manager = GameManager(storage)
     await bot.add_cog(DiplomacyCog(bot, game_manager, DEFAULT_MAP_PATH))
 
-def main();
+def main():
     token = os.environ["DISCORD_TOKEN"]
     bot.setup_hook = _setup
     bot.run(token)

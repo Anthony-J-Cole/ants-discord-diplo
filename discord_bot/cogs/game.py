@@ -12,7 +12,7 @@ class DiplomacyCog(commands.Cog):
         self.games = game_manager
         self.default_map_path = default_map_path
 
-    group = app_commands.Group(name="ants-diplo-bot", description="")
+    group = app_commands.Group(name="ants-diplo-bot", description="Diplo game")
 
     @group.command(name="create", description="start a game in the current channel")
     @app_commands.describe(name="Name of the game")
@@ -36,7 +36,7 @@ class DiplomacyCog(commands.Cog):
         except (GameManagerError, OrderParseError) as e:
             await interaction.response.send_message(f"Cant submit that order: {e}", ephemeral=True)
 
-        @group.command(name="orders", description="Show your currently submitted orders")
+    @group.command(name="orders", description="Show your currently submitted orders")
     async def orders(self, interaction: discord.Interaction, game_id: str):
         try:
             mine = self.games.my_orders(game_id, str(interaction.user.id))
@@ -46,7 +46,7 @@ class DiplomacyCog(commands.Cog):
             await interaction.response.send_message(str(e), ephemeral=True)
  
     @group.command(name="process", description="Process the turn")
-     @app_commands.checks.has_permissions(manage_guild=True)
+    @app_commands.checks.has_permissions(manage_guild=True)
     async def process(self, interaction: discord.Interaction, game_id: str):
         new_state = self.games.process_phase(game_id)
         game_map = self.games.get_map(game_id)
@@ -58,8 +58,8 @@ class DiplomacyCog(commands.Cog):
         except ValueError:
             await interaction.response.send_message(content)
     
-        @group.command(name="map", description="Show the current board")
-    async def map_(self, interaction: discord.Interaction, game_id: str):
+    @group.command(name="map", description="Show the current board")
+    async def map(self, interaction: discord.Interaction, game_id: str):
         state = self.games.get_state(game_id)
         game_map = self.games.get_map(game_id)
         try:

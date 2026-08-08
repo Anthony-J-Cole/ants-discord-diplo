@@ -4,7 +4,7 @@ services:
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
       - DB_PATH=/data/dipomacy.db
-      - DEFAULT_MAP_PATH=/app/diplo-engine/maps/test_map.json
+      - DEFAULT_MAP_PATH=/app/diplo_engine/maps/map_test.json
     volumes:
       - bot_data:/data
   

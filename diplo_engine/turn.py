@@ -33,7 +33,7 @@ def _advance_past_movement(game_map: Map, state: GameState) -> GameState:
     if state.season == "spring":
         state.season = "fall"
         state.phase = Phase.MOVEMENT
-    else
+    else:
         state = update_ownership(game_map, state)
         state.phase = Phase.BUILD
     return state
