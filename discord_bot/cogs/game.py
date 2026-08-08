@@ -55,5 +55,5 @@ class DiplomacyCog(commands.Cog):
     
     async def setup(bot: commands.bot):
         pass
-    
+
     
